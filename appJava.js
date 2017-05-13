@@ -4,3 +4,10 @@
 //set return limit = page = 
 //set start year = begin_date =
 
+$.ajax({
+	url: queryURL,
+	method: 'GET'
+}).done(function(response){
+	
+
+});
