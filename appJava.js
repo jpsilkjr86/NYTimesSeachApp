@@ -6,12 +6,15 @@ $('#Search').on('click', function(e){
 	var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=' + apiKey;
 
 	var searchQ = 'q=' + ($('#inputSearch').val());
+	
 	console.log(searchQ);
-	var beginDate = 'begin_date=20160901';
+	
+	var beginDate = 'begin_date=' + ($('#inputStart').val());
 	var page = '0';
 	var sampleQuery = queryURL + '&' + searchQ + '&' + page + '&' + beginDate;
 
 	queryURL += ('&' + searchQ);
+	queryURL += ('&' + beginDate);
 
 
 
