@@ -21,22 +21,15 @@ $('#Search').on('click', function(e){
 		console.log(docs);
 
 
-<<<<<<< HEAD
+
 		for (i = 0; i < docs.length; i++) {
 			var newPanel = $('<div class="panel panel-default">');
 
-			var panelHead = $('<div class="panel-heading">');
-			panelHead.text('Insert title here');
-=======
 		var panelHead = $('<div class="panel-heading">');
 		panelHead.text(docs[i].headline.main);
 
 		var panelContent = $('<div class="panel-body">');
 		panelContent.text(docs[i].snippet);
->>>>>>> b9a57c50fa83ca9dfbb7ffe8e02b4ba909e67ea3
-
-			var panelContent = $('<div class="panel-body">');
-			panelContent.text('Some content');
 
 			newPanel.append(panelHead, panelContent);
 			$('#Articles').append(newPanel);
