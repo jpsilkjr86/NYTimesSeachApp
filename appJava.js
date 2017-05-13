@@ -22,10 +22,10 @@ $.ajax({
 		var newPanel = $('<div class="panel panel-default">');
 
 		var panelHead = $('<div class="panel-heading">');
-		panelHead.text('Insert title here');
+		panelHead.text(docs[i].headline.main);
 
 		var panelContent = $('<div class="panel-body">');
-		panelContent.text('Some content');
+		panelContent.text(docs[i].snippet;
 
 		newPanel.append(panelHead, panelContent);
 		$('#Articles').append(newPanel);
