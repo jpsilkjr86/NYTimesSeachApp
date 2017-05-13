@@ -18,4 +18,17 @@ $.ajax({
 	console.log(docs);
 
 
+	for (i = 0; i < docs.length; i++) {
+		var newPanel = $('<div class="panel panel-default">');
+
+		var panelHead = $('<div class="panel-heading">');
+		panelHead.text('Insert title here');
+
+		var panelContent = $('<div class="panel-body">');
+		panelContent.text('Some content');
+
+		newPanel.append(panelHead, panelContent);
+		$('#Articles').append(newPanel);
+	}
+
 });
