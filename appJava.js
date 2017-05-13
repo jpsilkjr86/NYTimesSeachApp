@@ -25,7 +25,7 @@ $.ajax({
 		panelHead.text(docs[i].headline.main);
 
 		var panelContent = $('<div class="panel-body">');
-		panelContent.text(docs[i].snippet;
+		panelContent.text(docs[i].snippet);
 
 		newPanel.append(panelHead, panelContent);
 		$('#Articles').append(newPanel);
