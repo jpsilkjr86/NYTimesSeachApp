@@ -30,12 +30,26 @@ $('#Search').on('click', function(e){
 	// puts in query format
 	endDate = 'end_date=' + endDate;
 
+	// gets number of records to retrieve
+	var numRecords = $('#select-num-records').val();
+
+	// declares page as the number of records (converted to a number) divided by 10 minus 1
+	var page;
+
+	if (numRecords === '10') {page = 'page=1';}
+	if (numRecords === '20') {page = 'page=1&page=2';}
+	if (numRecords === '30') {page = 'page=1&page=2&page=3';}
+	if (numRecords === '40') {page = 'page=1&page=2&page=3&page=4';}
+
+	// puts in query format
+	// page = 'page=' + page;
 
 
 	// adds to queryURL
 	queryURL += ('&' + searchQ);
 	queryURL += ('&' + beginDate);
 	queryURL += ('&' + endDate);
+	queryURL += ('&' + page);
 
 	console.log(queryURL);
 
