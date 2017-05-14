@@ -7,8 +7,6 @@
     <meta charset="UTF-8">
     <title>NY Times</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -25,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div id="form" class=col-md-10>
+            <div id="form" class="col-md-10">
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Search</label>
@@ -36,22 +34,22 @@
                         <input class="form-control" id="inputRecords" placeholder="Number of records retrieved">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Start Year</label>
-                        <input class="form-control" id="inputStart" placeholder="Start year">
+                        <label for="exampleInputPassword1">From:</label>
+                        <input class="form-control" id="inputStart" placeholder="Start year" type="date">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">End Year</label>
-                        <input class="form-control" id="inputEnd" placeholder="End Year">
+                        <label for="exampleInputPassword1">To:</label>
+                        <input class="form-control" id="inputEnd" placeholder="End Year" type="date">
                     </div>
                     <center>
-                        <input id="Search" type="submit" value="Search">
+                        <input id="Search" type="submit" value="Search"></input>
                         <!-- <button id="Search">Search</button> -->
                         <button id="Clear">Clear Results</button>
                     </center>
                 </form>
                 <div class="col-md-1"></div>
-            </div>
-        </div>
+            </div> <!-- End div form -->
+        </div>  <!-- End row -->
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
@@ -62,8 +60,7 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="appJava.js">
-    </script>
+    <script type="text/javascript" src="appJava.js"></script>
 </body>
 
 </html>
