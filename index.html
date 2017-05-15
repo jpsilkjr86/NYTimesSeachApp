@@ -26,13 +26,14 @@
             <div id="form" class="col-md-10">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Search</label>
-                        <input class="form-control" id="inputSearch" placeholder="Search">
+                        <label for="exampleInputEmail1">*Title or Topic</label>
+                        <input class="form-control" id="inputSearch" placeholder="Search" required>
                     </div>
 
                     <div class="form-group">
                         <label for="selectNumRecords">Number of Records Retrieved:</label>
                         <select class="form-control" id="select-num-records">
+                            <option>Select a Number</option>
                             <option>10</option>
                             <option>20</option>
                             <option>30</option>
@@ -52,6 +53,7 @@
                         <label for="exampleInputPassword1">To:</label>
                         <input class="form-control" id="inputEnd" placeholder="End Year" type="date">
                     </div>
+                    <p class="text-muted">*Required</p>
                     <center>
                         <input id="Search" type="submit" value="Search"></input>
                         <!-- <button id="Search">Search</button> -->

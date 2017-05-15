@@ -9,48 +9,47 @@ $('#Search').on('click', function(e){
 	// sets base queryURL
 	var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=' + apiKey;
 
-	// gets searchQ from inputSearch
+	// gets searchQ from inputSearch and adds it to queryURL
 	var searchQ = 'q=' + ($('#inputSearch').val());
+	queryURL += ('&' + searchQ);	
 
-	// gets beginDate from inputStart
+	// gets beginDate from inputStart and adds to queryURL if it's not empty
 	var beginDate = $('#inputStart').val();
 
-	// converts date into a format we can use in the query, without any dashes
-	beginDate = convertDateFormat(beginDate);
+	if (beginDate !== "") {
+		// converts date into a format we can use in the query, without any dashes
+		beginDate = convertDateFormat(beginDate);
 
-	// puts in query format
-	beginDate = 'begin_date=' + beginDate;
+		// puts in query format
+		beginDate = 'begin_date=' + beginDate;
 
-	// gets beginDate from inputStart
+		// adds to queryURL
+		queryURL += ('&' + beginDate);
+	}	
+
+	// gets endDate from inputStart
 	var endDate = $('#inputEnd').val();
 
-	// converts date into a format we can use in the query, without any dashes
-	endDate = convertDateFormat(endDate);
+	if (endDate !== "") {
+		// converts date into a format we can use in the query, without any dashes
+		endDate = convertDateFormat(endDate);
 
-	// puts in query format
-	endDate = 'end_date=' + endDate;
+		// puts in query format
+		endDate = 'end_date=' + endDate;
+
+		// adds to queryURL
+		queryURL += ('&' + endDate);
+	}	
 
 	// gets number of records to retrieve
 	var numRecords = $('#select-num-records').val();
 
-	// declares page as the number of records (converted to a number) divided by 10 minus 1
-	var page;
+	if (numRecords === '10') {var page = 'page=1'; queryURL += ('&' + page);}
+	if (numRecords === '20') {var page = 'page=1&page=2'; queryURL += ('&' + page);}
+	if (numRecords === '30') {var page = 'page=1&page=2&page=3'; queryURL += ('&' + page);}
+	if (numRecords === '40') {var page = 'page=1&page=2&page=3&page=4'; queryURL += ('&' + page);}
 
-	if (numRecords === '10') {page = 'page=1';}
-	if (numRecords === '20') {page = 'page=1&page=2';}
-	if (numRecords === '30') {page = 'page=1&page=2&page=3';}
-	if (numRecords === '40') {page = 'page=1&page=2&page=3&page=4';}
-
-	// puts in query format
-	// page = 'page=' + page;
-
-
-	// adds to queryURL
-	queryURL += ('&' + searchQ);
-	queryURL += ('&' + beginDate);
-	queryURL += ('&' + endDate);
-	queryURL += ('&' + page);
-
+	
 	console.log(queryURL);
 
 	var page = '0';
